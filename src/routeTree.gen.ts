@@ -10,33 +10,442 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as AdminAnalyticsRouteImport } from './routes/admin/analytics'
+import { Route as AdminApprovalsRouteImport } from './routes/admin/approvals'
+import { Route as AdminAuditLogsRouteImport } from './routes/admin/audit-logs'
+import { Route as AdminCommunityRouteImport } from './routes/admin/community'
+import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as AdminPropertiesRouteImport } from './routes/admin/properties'
+import { Route as AdminReportsRouteImport } from './routes/admin/reports'
+import { Route as AdminReviewsRouteImport } from './routes/admin/reviews'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as AdminVerificationRouteImport } from './routes/admin/verification'
+import { Route as LandlordDashboardRouteImport } from './routes/landlord/dashboard'
+import { Route as LandlordMessagesRouteImport } from './routes/landlord/messages'
+import { Route as LandlordProfileRouteImport } from './routes/landlord/profile'
+import { Route as LandlordRequestsRouteImport } from './routes/landlord/requests'
+import { Route as LandlordVisitsRouteImport } from './routes/landlord/visits'
+import { Route as PropertiesIndexRouteImport } from './routes/properties/index'
+import { Route as PropertiesIdRouteImport } from './routes/properties/$id'
+import { Route as TenantCompareRouteImport } from './routes/tenant/compare'
+import { Route as TenantDashboardRouteImport } from './routes/tenant/dashboard'
+import { Route as TenantFavoritesRouteImport } from './routes/tenant/favorites'
+import { Route as TenantMessagesRouteImport } from './routes/tenant/messages'
+import { Route as TenantPreferencesRouteImport } from './routes/tenant/preferences'
+import { Route as TenantProfileRouteImport } from './routes/tenant/profile'
+import { Route as TenantReviewsRouteImport } from './routes/tenant/reviews'
+import { Route as TenantVisitsRouteImport } from './routes/tenant/visits'
+import { Route as LandlordPropertiesIndexRouteImport } from './routes/landlord/properties/index'
+import { Route as LandlordPropertiesCreateRouteImport } from './routes/landlord/properties/create'
+import { Route as LandlordPropertiesIdEditRouteImport } from './routes/landlord/properties/$id.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
+  id: '/admin/analytics',
+  path: '/admin/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminApprovalsRoute = AdminApprovalsRouteImport.update({
+  id: '/admin/approvals',
+  path: '/admin/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAuditLogsRoute = AdminAuditLogsRouteImport.update({
+  id: '/admin/audit-logs',
+  path: '/admin/audit-logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCommunityRoute = AdminCommunityRouteImport.update({
+  id: '/admin/community',
+  path: '/admin/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPropertiesRoute = AdminPropertiesRouteImport.update({
+  id: '/admin/properties',
+  path: '/admin/properties',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReviewsRoute = AdminReviewsRouteImport.update({
+  id: '/admin/reviews',
+  path: '/admin/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVerificationRoute = AdminVerificationRouteImport.update({
+  id: '/admin/verification',
+  path: '/admin/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordDashboardRoute = LandlordDashboardRouteImport.update({
+  id: '/landlord/dashboard',
+  path: '/landlord/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordMessagesRoute = LandlordMessagesRouteImport.update({
+  id: '/landlord/messages',
+  path: '/landlord/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordProfileRoute = LandlordProfileRouteImport.update({
+  id: '/landlord/profile',
+  path: '/landlord/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordRequestsRoute = LandlordRequestsRouteImport.update({
+  id: '/landlord/requests',
+  path: '/landlord/requests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordVisitsRoute = LandlordVisitsRouteImport.update({
+  id: '/landlord/visits',
+  path: '/landlord/visits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertiesIndexRoute = PropertiesIndexRouteImport.update({
+  id: '/properties/',
+  path: '/properties/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertiesIdRoute = PropertiesIdRouteImport.update({
+  id: '/properties/$id',
+  path: '/properties/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantCompareRoute = TenantCompareRouteImport.update({
+  id: '/tenant/compare',
+  path: '/tenant/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantDashboardRoute = TenantDashboardRouteImport.update({
+  id: '/tenant/dashboard',
+  path: '/tenant/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantFavoritesRoute = TenantFavoritesRouteImport.update({
+  id: '/tenant/favorites',
+  path: '/tenant/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantMessagesRoute = TenantMessagesRouteImport.update({
+  id: '/tenant/messages',
+  path: '/tenant/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantPreferencesRoute = TenantPreferencesRouteImport.update({
+  id: '/tenant/preferences',
+  path: '/tenant/preferences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantProfileRoute = TenantProfileRouteImport.update({
+  id: '/tenant/profile',
+  path: '/tenant/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantReviewsRoute = TenantReviewsRouteImport.update({
+  id: '/tenant/reviews',
+  path: '/tenant/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TenantVisitsRoute = TenantVisitsRouteImport.update({
+  id: '/tenant/visits',
+  path: '/tenant/visits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordPropertiesIndexRoute = LandlordPropertiesIndexRouteImport.update({
+  id: '/landlord/properties/',
+  path: '/landlord/properties/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordPropertiesCreateRoute =
+  LandlordPropertiesCreateRouteImport.update({
+    id: '/landlord/properties/create',
+    path: '/landlord/properties/create',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LandlordPropertiesIdEditRoute =
+  LandlordPropertiesIdEditRouteImport.update({
+    id: '/landlord/properties/$id/edit',
+    path: '/landlord/properties/$id/edit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/approvals': typeof AdminApprovalsRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/community': typeof AdminCommunityRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/properties': typeof AdminPropertiesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verification': typeof AdminVerificationRoute
+  '/landlord/dashboard': typeof LandlordDashboardRoute
+  '/landlord/messages': typeof LandlordMessagesRoute
+  '/landlord/profile': typeof LandlordProfileRoute
+  '/landlord/requests': typeof LandlordRequestsRoute
+  '/landlord/visits': typeof LandlordVisitsRoute
+  '/properties/$id': typeof PropertiesIdRoute
+  '/tenant/compare': typeof TenantCompareRoute
+  '/tenant/dashboard': typeof TenantDashboardRoute
+  '/tenant/favorites': typeof TenantFavoritesRoute
+  '/tenant/messages': typeof TenantMessagesRoute
+  '/tenant/preferences': typeof TenantPreferencesRoute
+  '/tenant/profile': typeof TenantProfileRoute
+  '/tenant/reviews': typeof TenantReviewsRoute
+  '/tenant/visits': typeof TenantVisitsRoute
+  '/properties/': typeof PropertiesIndexRoute
+  '/landlord/properties/create': typeof LandlordPropertiesCreateRoute
+  '/landlord/properties/': typeof LandlordPropertiesIndexRoute
+  '/landlord/properties/$id/edit': typeof LandlordPropertiesIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/approvals': typeof AdminApprovalsRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/community': typeof AdminCommunityRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/properties': typeof AdminPropertiesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verification': typeof AdminVerificationRoute
+  '/landlord/dashboard': typeof LandlordDashboardRoute
+  '/landlord/messages': typeof LandlordMessagesRoute
+  '/landlord/profile': typeof LandlordProfileRoute
+  '/landlord/requests': typeof LandlordRequestsRoute
+  '/landlord/visits': typeof LandlordVisitsRoute
+  '/properties/$id': typeof PropertiesIdRoute
+  '/tenant/compare': typeof TenantCompareRoute
+  '/tenant/dashboard': typeof TenantDashboardRoute
+  '/tenant/favorites': typeof TenantFavoritesRoute
+  '/tenant/messages': typeof TenantMessagesRoute
+  '/tenant/preferences': typeof TenantPreferencesRoute
+  '/tenant/profile': typeof TenantProfileRoute
+  '/tenant/reviews': typeof TenantReviewsRoute
+  '/tenant/visits': typeof TenantVisitsRoute
+  '/properties': typeof PropertiesIndexRoute
+  '/landlord/properties/create': typeof LandlordPropertiesCreateRoute
+  '/landlord/properties': typeof LandlordPropertiesIndexRoute
+  '/landlord/properties/$id/edit': typeof LandlordPropertiesIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/approvals': typeof AdminApprovalsRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/community': typeof AdminCommunityRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/properties': typeof AdminPropertiesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verification': typeof AdminVerificationRoute
+  '/landlord/dashboard': typeof LandlordDashboardRoute
+  '/landlord/messages': typeof LandlordMessagesRoute
+  '/landlord/profile': typeof LandlordProfileRoute
+  '/landlord/requests': typeof LandlordRequestsRoute
+  '/landlord/visits': typeof LandlordVisitsRoute
+  '/properties/$id': typeof PropertiesIdRoute
+  '/tenant/compare': typeof TenantCompareRoute
+  '/tenant/dashboard': typeof TenantDashboardRoute
+  '/tenant/favorites': typeof TenantFavoritesRoute
+  '/tenant/messages': typeof TenantMessagesRoute
+  '/tenant/preferences': typeof TenantPreferencesRoute
+  '/tenant/profile': typeof TenantProfileRoute
+  '/tenant/reviews': typeof TenantReviewsRoute
+  '/tenant/visits': typeof TenantVisitsRoute
+  '/properties/': typeof PropertiesIndexRoute
+  '/landlord/properties/create': typeof LandlordPropertiesCreateRoute
+  '/landlord/properties/': typeof LandlordPropertiesIndexRoute
+  '/landlord/properties/$id/edit': typeof LandlordPropertiesIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/how-it-works'
+    | '/login'
+    | '/register'
+    | '/admin/analytics'
+    | '/admin/approvals'
+    | '/admin/audit-logs'
+    | '/admin/community'
+    | '/admin/dashboard'
+    | '/admin/properties'
+    | '/admin/reports'
+    | '/admin/reviews'
+    | '/admin/users'
+    | '/admin/verification'
+    | '/landlord/dashboard'
+    | '/landlord/messages'
+    | '/landlord/profile'
+    | '/landlord/requests'
+    | '/landlord/visits'
+    | '/properties/$id'
+    | '/tenant/compare'
+    | '/tenant/dashboard'
+    | '/tenant/favorites'
+    | '/tenant/messages'
+    | '/tenant/preferences'
+    | '/tenant/profile'
+    | '/tenant/reviews'
+    | '/tenant/visits'
+    | '/properties/'
+    | '/landlord/properties/create'
+    | '/landlord/properties/'
+    | '/landlord/properties/$id/edit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/how-it-works'
+    | '/login'
+    | '/register'
+    | '/admin/analytics'
+    | '/admin/approvals'
+    | '/admin/audit-logs'
+    | '/admin/community'
+    | '/admin/dashboard'
+    | '/admin/properties'
+    | '/admin/reports'
+    | '/admin/reviews'
+    | '/admin/users'
+    | '/admin/verification'
+    | '/landlord/dashboard'
+    | '/landlord/messages'
+    | '/landlord/profile'
+    | '/landlord/requests'
+    | '/landlord/visits'
+    | '/properties/$id'
+    | '/tenant/compare'
+    | '/tenant/dashboard'
+    | '/tenant/favorites'
+    | '/tenant/messages'
+    | '/tenant/preferences'
+    | '/tenant/profile'
+    | '/tenant/reviews'
+    | '/tenant/visits'
+    | '/properties'
+    | '/landlord/properties/create'
+    | '/landlord/properties'
+    | '/landlord/properties/$id/edit'
+  id:
+    | '__root__'
+    | '/'
+    | '/how-it-works'
+    | '/login'
+    | '/register'
+    | '/admin/analytics'
+    | '/admin/approvals'
+    | '/admin/audit-logs'
+    | '/admin/community'
+    | '/admin/dashboard'
+    | '/admin/properties'
+    | '/admin/reports'
+    | '/admin/reviews'
+    | '/admin/users'
+    | '/admin/verification'
+    | '/landlord/dashboard'
+    | '/landlord/messages'
+    | '/landlord/profile'
+    | '/landlord/requests'
+    | '/landlord/visits'
+    | '/properties/$id'
+    | '/tenant/compare'
+    | '/tenant/dashboard'
+    | '/tenant/favorites'
+    | '/tenant/messages'
+    | '/tenant/preferences'
+    | '/tenant/profile'
+    | '/tenant/reviews'
+    | '/tenant/visits'
+    | '/properties/'
+    | '/landlord/properties/create'
+    | '/landlord/properties/'
+    | '/landlord/properties/$id/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  AdminAnalyticsRoute: typeof AdminAnalyticsRoute
+  AdminApprovalsRoute: typeof AdminApprovalsRoute
+  AdminAuditLogsRoute: typeof AdminAuditLogsRoute
+  AdminCommunityRoute: typeof AdminCommunityRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminPropertiesRoute: typeof AdminPropertiesRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminReviewsRoute: typeof AdminReviewsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminVerificationRoute: typeof AdminVerificationRoute
+  LandlordDashboardRoute: typeof LandlordDashboardRoute
+  LandlordMessagesRoute: typeof LandlordMessagesRoute
+  LandlordProfileRoute: typeof LandlordProfileRoute
+  LandlordRequestsRoute: typeof LandlordRequestsRoute
+  LandlordVisitsRoute: typeof LandlordVisitsRoute
+  PropertiesIdRoute: typeof PropertiesIdRoute
+  TenantCompareRoute: typeof TenantCompareRoute
+  TenantDashboardRoute: typeof TenantDashboardRoute
+  TenantFavoritesRoute: typeof TenantFavoritesRoute
+  TenantMessagesRoute: typeof TenantMessagesRoute
+  TenantPreferencesRoute: typeof TenantPreferencesRoute
+  TenantProfileRoute: typeof TenantProfileRoute
+  TenantReviewsRoute: typeof TenantReviewsRoute
+  TenantVisitsRoute: typeof TenantVisitsRoute
+  PropertiesIndexRoute: typeof PropertiesIndexRoute
+  LandlordPropertiesCreateRoute: typeof LandlordPropertiesCreateRoute
+  LandlordPropertiesIndexRoute: typeof LandlordPropertiesIndexRoute
+  LandlordPropertiesIdEditRoute: typeof LandlordPropertiesIdEditRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +457,259 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/analytics': {
+      id: '/admin/analytics'
+      path: '/admin/analytics'
+      fullPath: '/admin/analytics'
+      preLoaderRoute: typeof AdminAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/approvals': {
+      id: '/admin/approvals'
+      path: '/admin/approvals'
+      fullPath: '/admin/approvals'
+      preLoaderRoute: typeof AdminApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/audit-logs': {
+      id: '/admin/audit-logs'
+      path: '/admin/audit-logs'
+      fullPath: '/admin/audit-logs'
+      preLoaderRoute: typeof AdminAuditLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/community': {
+      id: '/admin/community'
+      path: '/admin/community'
+      fullPath: '/admin/community'
+      preLoaderRoute: typeof AdminCommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/properties': {
+      id: '/admin/properties'
+      path: '/admin/properties'
+      fullPath: '/admin/properties'
+      preLoaderRoute: typeof AdminPropertiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reviews': {
+      id: '/admin/reviews'
+      path: '/admin/reviews'
+      fullPath: '/admin/reviews'
+      preLoaderRoute: typeof AdminReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/verification': {
+      id: '/admin/verification'
+      path: '/admin/verification'
+      fullPath: '/admin/verification'
+      preLoaderRoute: typeof AdminVerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/dashboard': {
+      id: '/landlord/dashboard'
+      path: '/landlord/dashboard'
+      fullPath: '/landlord/dashboard'
+      preLoaderRoute: typeof LandlordDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/messages': {
+      id: '/landlord/messages'
+      path: '/landlord/messages'
+      fullPath: '/landlord/messages'
+      preLoaderRoute: typeof LandlordMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/profile': {
+      id: '/landlord/profile'
+      path: '/landlord/profile'
+      fullPath: '/landlord/profile'
+      preLoaderRoute: typeof LandlordProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/requests': {
+      id: '/landlord/requests'
+      path: '/landlord/requests'
+      fullPath: '/landlord/requests'
+      preLoaderRoute: typeof LandlordRequestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/visits': {
+      id: '/landlord/visits'
+      path: '/landlord/visits'
+      fullPath: '/landlord/visits'
+      preLoaderRoute: typeof LandlordVisitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/properties/': {
+      id: '/properties/'
+      path: '/properties'
+      fullPath: '/properties/'
+      preLoaderRoute: typeof PropertiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/properties/$id': {
+      id: '/properties/$id'
+      path: '/properties/$id'
+      fullPath: '/properties/$id'
+      preLoaderRoute: typeof PropertiesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/compare': {
+      id: '/tenant/compare'
+      path: '/tenant/compare'
+      fullPath: '/tenant/compare'
+      preLoaderRoute: typeof TenantCompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/dashboard': {
+      id: '/tenant/dashboard'
+      path: '/tenant/dashboard'
+      fullPath: '/tenant/dashboard'
+      preLoaderRoute: typeof TenantDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/favorites': {
+      id: '/tenant/favorites'
+      path: '/tenant/favorites'
+      fullPath: '/tenant/favorites'
+      preLoaderRoute: typeof TenantFavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/messages': {
+      id: '/tenant/messages'
+      path: '/tenant/messages'
+      fullPath: '/tenant/messages'
+      preLoaderRoute: typeof TenantMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/preferences': {
+      id: '/tenant/preferences'
+      path: '/tenant/preferences'
+      fullPath: '/tenant/preferences'
+      preLoaderRoute: typeof TenantPreferencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/profile': {
+      id: '/tenant/profile'
+      path: '/tenant/profile'
+      fullPath: '/tenant/profile'
+      preLoaderRoute: typeof TenantProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/reviews': {
+      id: '/tenant/reviews'
+      path: '/tenant/reviews'
+      fullPath: '/tenant/reviews'
+      preLoaderRoute: typeof TenantReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenant/visits': {
+      id: '/tenant/visits'
+      path: '/tenant/visits'
+      fullPath: '/tenant/visits'
+      preLoaderRoute: typeof TenantVisitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/properties/': {
+      id: '/landlord/properties/'
+      path: '/landlord/properties'
+      fullPath: '/landlord/properties/'
+      preLoaderRoute: typeof LandlordPropertiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/properties/create': {
+      id: '/landlord/properties/create'
+      path: '/landlord/properties/create'
+      fullPath: '/landlord/properties/create'
+      preLoaderRoute: typeof LandlordPropertiesCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord/properties/$id/edit': {
+      id: '/landlord/properties/$id/edit'
+      path: '/landlord/properties/$id/edit'
+      fullPath: '/landlord/properties/$id/edit'
+      preLoaderRoute: typeof LandlordPropertiesIdEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  AdminAnalyticsRoute: AdminAnalyticsRoute,
+  AdminApprovalsRoute: AdminApprovalsRoute,
+  AdminAuditLogsRoute: AdminAuditLogsRoute,
+  AdminCommunityRoute: AdminCommunityRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminPropertiesRoute: AdminPropertiesRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminReviewsRoute: AdminReviewsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminVerificationRoute: AdminVerificationRoute,
+  LandlordDashboardRoute: LandlordDashboardRoute,
+  LandlordMessagesRoute: LandlordMessagesRoute,
+  LandlordProfileRoute: LandlordProfileRoute,
+  LandlordRequestsRoute: LandlordRequestsRoute,
+  LandlordVisitsRoute: LandlordVisitsRoute,
+  PropertiesIdRoute: PropertiesIdRoute,
+  TenantCompareRoute: TenantCompareRoute,
+  TenantDashboardRoute: TenantDashboardRoute,
+  TenantFavoritesRoute: TenantFavoritesRoute,
+  TenantMessagesRoute: TenantMessagesRoute,
+  TenantPreferencesRoute: TenantPreferencesRoute,
+  TenantProfileRoute: TenantProfileRoute,
+  TenantReviewsRoute: TenantReviewsRoute,
+  TenantVisitsRoute: TenantVisitsRoute,
+  PropertiesIndexRoute: PropertiesIndexRoute,
+  LandlordPropertiesCreateRoute: LandlordPropertiesCreateRoute,
+  LandlordPropertiesIndexRoute: LandlordPropertiesIndexRoute,
+  LandlordPropertiesIdEditRoute: LandlordPropertiesIdEditRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

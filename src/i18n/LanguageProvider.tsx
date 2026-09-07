@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import i18n, { LANGUAGE_STORAGE_KEY, readStoredLanguage, type AppLanguage } from "./index";
 
 export function useLanguage() {
-  const { i18n: instance } = useTranslation();
+  const { t, i18n: instance } = useTranslation();
   const language = (instance.language === "en" ? "en" : "bn") as AppLanguage;
 
   const setLanguage = (next: AppLanguage) => {
@@ -16,7 +16,7 @@ export function useLanguage() {
     }
   };
 
-  return { language, setLanguage };
+  return { language, setLanguage, t };
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

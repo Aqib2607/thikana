@@ -11,9 +11,9 @@ export const USING_MOCK_API = API_BASE_URL === "";
 
 export class ApiError extends Error {
   readonly status: number;
-  readonly details?: Record<string, string[]>;
+  readonly details?: Record<string, string[]> | undefined;
 
-  constructor(status: number, message: string, details?: Record<string, string[]>) {
+  constructor(status: number, message: string, details?: Record<string, string[]> | undefined) {
     super(message);
     this.name = "ApiError";
     this.status = status;
@@ -22,10 +22,10 @@ export class ApiError extends Error {
 }
 
 interface RequestOptions {
-  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE" | undefined;
   body?: unknown;
-  signal?: AbortSignal;
-  query?: Record<string, string | number | boolean | undefined>;
+  signal?: AbortSignal | undefined;
+  query?: Record<string, string | number | boolean | undefined> | undefined;
 }
 
 function buildUrl(path: string, query?: RequestOptions["query"]): string {
@@ -39,15 +39,17 @@ function buildUrl(path: string, query?: RequestOptions["query"]): string {
 }
 
 export async function apiRequest<T>(path: string, options: RequestOptions = {}): Promise<T> {
-  const response = await fetch(buildUrl(path, options.query), {
+  const fetchOptions: RequestInit = {
     method: options.method ?? "GET",
     headers: {
       Accept: "application/json",
       ...(options.body ? { "Content-Type": "application/json" } : {}),
     },
-    body: options.body ? JSON.stringify(options.body) : undefined,
-    signal: options.signal,
-  });
+    ...(options.body !== undefined ? { body: JSON.stringify(options.body) } : {}),
+    ...(options.signal !== undefined ? { signal: options.signal } : {}),
+  };
+
+  const response = await fetch(buildUrl(path, options.query), fetchOptions);
 
   if (!response.ok) {
     let message = `Request failed with status ${response.status}`;
